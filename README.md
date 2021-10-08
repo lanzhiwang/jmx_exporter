@@ -239,3 +239,29 @@ Add the following flag to your Java invocation:
 
 A Debian binary package is created as part of the build process and it can be used to install an executable into `/usr/bin/jmx_exporter` with configuration in `/etc/jmx_exporter/jmx_exporter.yaml`.  Debian 二进制包是作为构建过程的一部分创建的，它可用于将可执行文件安装到 /usr/bin/jmx_exporter 中，并在 /etc/jmx_exporter/jmx_exporter.yaml 中进行配置。
 
+
+## kafka
+
+
+```bash
+
+$ ./bin/zookeeper-server-start.sh -daemon ./config/zookeeper.properties
+
+
+$ JMX_PORT="9999" ./bin/kafka-server-start.sh -daemon ./config/server.properties
+$ jps
+
+$ cat bin/httpserver_sample_config.yml
+hostPort: localhost:9999
+username:
+password:
+rules:
+- pattern: ".*"
+
+$ java -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=5555 -jar ./bin/jmx_prometheus_httpserver-0.16.0-jar-with-dependencies.jar 5556 ./bin/httpserver_sample_config.yml
+
+
+http://localhost:5556/
+
+```
+

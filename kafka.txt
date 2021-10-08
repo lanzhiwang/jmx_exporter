@@ -1,0 +1,108 @@
+# HELP jmx_config_reload_failure_total Number of times configuration have failed to be reloaded.
+# TYPE jmx_config_reload_failure_total counter
+jmx_config_reload_failure_total 0.0
+
+
+# HELP jmx_exporter_build_info A metric with a constant '1' value labeled with the version of the JMX exporter.
+# TYPE jmx_exporter_build_info gauge
+jmx_exporter_build_info{version="0.16.0",name="Prometheus JMX Exporter - Http Server",} 1.0
+
+
+# HELP jmx_config_reload_success_total Number of times configuration have successfully been reloaded.
+# TYPE jmx_config_reload_success_total counter
+jmx_config_reload_success_total 0.0
+
+
+kafka.server:type=socket-server-metrics,listener=PLAINTEXT,networkProcessor=0
+connection-creation-total
+io-wait-time-ns-avg
+successful-reauthentication-rate
+io-ratio
+io-waittime-total
+
+# HELP kafka_server_socket_server_metrics_connection_creation_total The total number of new connections established (kafka.server<type=socket-server-metrics, listener=PLAINTEXT, networkProcessor=1><>connection-creation-total)
+# TYPE kafka_server_socket_server_metrics_connection_creation_total untyped
+kafka_server_socket_server_metrics_connection_creation_total{listener="PLAINTEXT",networkProcessor="1",} 0.0
+kafka_server_socket_server_metrics_connection_creation_total{listener="PLAINTEXT",networkProcessor="2",} 0.0
+kafka_server_socket_server_metrics_connection_creation_total{listener="PLAINTEXT",networkProcessor="0",} 1.0
+
+
+# HELP kafka_server_socket_server_metrics_io_wait_time_ns_avg The average length of time the I/O thread spent waiting for a socket ready for reads or writes in nanoseconds. (kafka.server<type=socket-server-metrics, listener=PLAINTEXT, networkProcessor=1><>io-wait-time-ns-avg)
+# TYPE kafka_server_socket_server_metrics_io_wait_time_ns_avg untyped
+kafka_server_socket_server_metrics_io_wait_time_ns_avg{listener="PLAINTEXT",networkProcessor="1",} 3.0263349166972476E8
+kafka_server_socket_server_metrics_io_wait_time_ns_avg{listener="PLAINTEXT",networkProcessor="2",} 3.026000281E8
+kafka_server_socket_server_metrics_io_wait_time_ns_avg{listener="PLAINTEXT",networkProcessor="0",} 3.026542366666667E8
+
+
+# HELP kafka_server_socket_server_metrics_successful_reauthentication_rate The number of successful re-authentication of connections per second (kafka.server<type=socket-server-metrics, listener=PLAINTEXT, networkProcessor=1><>successful-reauthentication-rate)
+# TYPE kafka_server_socket_server_metrics_successful_reauthentication_rate untyped
+kafka_server_socket_server_metrics_successful_reauthentication_rate{listener="PLAINTEXT",networkProcessor="1",} 0.0
+kafka_server_socket_server_metrics_successful_reauthentication_rate{listener="PLAINTEXT",networkProcessor="2",} 0.0
+kafka_server_socket_server_metrics_successful_reauthentication_rate{listener="PLAINTEXT",networkProcessor="0",} 0.0
+
+# HELP kafka_server_socket_server_metrics_io_ratio The fraction of time the I/O thread spent doing I/O (kafka.server<type=socket-server-metrics, listener=PLAINTEXT, networkProcessor=1><>io-ratio)
+# TYPE kafka_server_socket_server_metrics_io_ratio untyped
+kafka_server_socket_server_metrics_io_ratio{listener="PLAINTEXT",networkProcessor="1",} 1.9591517447900753E-5
+kafka_server_socket_server_metrics_io_ratio{listener="PLAINTEXT",networkProcessor="2",} 1.9337818997393465E-5
+kafka_server_socket_server_metrics_io_ratio{listener="PLAINTEXT",networkProcessor="0",} 1.881029102910291E-5
+
+# HELP kafka_server_socket_server_metrics_io_waittime_total The total time the I/O thread spent waiting (kafka.server<type=socket-server-metrics, listener=PLAINTEXT, networkProcessor=1><>io-waittime-total)
+# TYPE kafka_server_socket_server_metrics_io_waittime_total untyped
+kafka_server_socket_server_metrics_io_waittime_total{listener="PLAINTEXT",networkProcessor="1",} 9.7017982268E11
+kafka_server_socket_server_metrics_io_waittime_total{listener="PLAINTEXT",networkProcessor="2",} 9.70784872919E11
+kafka_server_socket_server_metrics_io_waittime_total{listener="PLAINTEXT",networkProcessor="0",} 9.7076892852E11
+
+
+kafka.server:type=socket-server-metrics
+MemoryPoolDepletedTimeTotal
+
+# HELP kafka_server_socket_server_metrics_MemoryPoolDepletedTimeTotal  (kafka.server<type=socket-server-metrics><>MemoryPoolDepletedTimeTotal)
+# TYPE kafka_server_socket_server_metrics_MemoryPoolDepletedTimeTotal untyped
+kafka_server_socket_server_metrics_MemoryPoolDepletedTimeTotal 0.0
+
+
+kafka.server:type=socket-server-metrics
+MemoryPoolAvgDepletedPercent
+
+# HELP kafka_server_socket_server_metrics_MemoryPoolAvgDepletedPercent  (kafka.server<type=socket-server-metrics><>MemoryPoolAvgDepletedPercent)
+# TYPE kafka_server_socket_server_metrics_MemoryPoolAvgDepletedPercent untyped
+kafka_server_socket_server_metrics_MemoryPoolAvgDepletedPercent 0.0
+
+
+kafka.server:type=socket-server-metrics,clientSoftwareName=unknown,clientSoftwareVersion=unknown,listener=PLAINTEXT,networkProcessor=0
+connections
+
+# HELP kafka_server_socket_server_metrics_connections The number of connections with this client and version. (kafka.server<type=socket-server-metrics, clientSoftwareName=unknown, clientSoftwareVersion=unknown, listener=PLAINTEXT, networkProcessor=0><>connections)
+# TYPE kafka_server_socket_server_metrics_connections untyped
+kafka_server_socket_server_metrics_connections{clientSoftwareName="unknown",clientSoftwareVersion="unknown",listener="PLAINTEXT",networkProcessor="0",} 0.0
+
+
+kafka.controller:type=ControllerChannelManager,name=RequestRateAndQueueTimeMs,broker-id=0
+MeanRate
+
+# HELP kafka_controller_ControllerChannelManager_MeanRate Attribute exposed for management (kafka.controller<type=ControllerChannelManager, name=RequestRateAndQueueTimeMs, broker-id=0><>MeanRate)
+# TYPE kafka_controller_ControllerChannelManager_MeanRate untyped
+kafka_controller_ControllerChannelManager_MeanRate{name="RequestRateAndQueueTimeMs",broker_id="0",} 0.0010302624121971268
+
+
+kafka.controller:type=ControllerStats,name=ListPartitionReassignmentRateAndTimeMs
+99thPercentile
+
+# HELP kafka_controller_ControllerStats_99thPercentile Attribute exposed for management (kafka.controller<type=ControllerStats, name=ListPartitionReassignmentRateAndTimeMs><>99thPercentile)
+# TYPE kafka_controller_ControllerStats_99thPercentile untyped
+kafka_controller_ControllerStats_99thPercentile{name="ListPartitionReassignmentRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="ControlledShutdownRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="PartitionReassignmentRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="ManualLeaderBalanceRateAndTimeMs",} 1.163513
+kafka_controller_ControllerStats_99thPercentile{name="LeaderElectionRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="UncleanLeaderElectionEnableRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="TopicChangeRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="ControllerChangeRateAndTimeMs",} 95.584277
+kafka_controller_ControllerStats_99thPercentile{name="ControllerShutdownRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="IsrChangeRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="TopicDeletionRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="LogDirChangeRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="LeaderAndIsrResponseReceivedRateAndTimeMs",} 0.0
+kafka_controller_ControllerStats_99thPercentile{name="AutoLeaderBalanceRateAndTimeMs",} 3.362577
+kafka_controller_ControllerStats_99thPercentile{name="TopicUncleanLeaderElectionEnableRateAndTimeMs",} 0.0
+
